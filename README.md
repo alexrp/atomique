@@ -36,16 +36,6 @@ simply use sequential consistency barriers and you should be fine in 99% of
 cases. Your code will end up a bit slower than necessary, but it's not by all
 that much.
 
-### Why are some barriers stronger than specified?
-
-Any given operation is guaranteed to use the specified barrier, or a barrier
-that is strictly a superset of the specified barrier. In the latter case, the
-barrier is stronger than strictly necessary, which can cause slight visible
-slowdowns.
-
-Overly strong barriers are a direct consequence of the limited atomics API
-surface of the .NET Framework.
-
 ### Why are some methods missing for 8-bit and 16-bit types?
 
 The main reason is that there are no methods in the framework for doing atomic
@@ -89,13 +79,6 @@ There's no particular reason that the Atomique API couldn't support this, but
 in practice, it's easier to reason about a single memory order for the whole
 operation.
 
-### Why does Atomique use both `Interlocked` and `Volatile`?
-
-As bad as it is to rely on these classes to synchronize on the same lock, it is
-the only option with the current atomic APIs in the .NET Framework.
-
-The good news is that both Microsoft .NET and Mono do this.
-
 ### Why is there no signal/compiler barrier?
 
 C++11 has the `atomic_signal_fence` function which does nothing at runtime, but
@@ -137,6 +120,23 @@ C/C++ sense*. If what you want is actually atomicity and/or acquire and release
 memory ordering -- i.e. you want C# or Java semantics -- then Atomique fits the
 bill. But if what you're looking for is the C/C++ `volatile` which is used to
 inhibit compiler optimization, Atomique is not the library you need.
+
+### Why does Atomique use both `Interlocked` and `Volatile`?
+
+As bad as it is to rely on these classes to synchronize on the same lock, it is
+the only option with the current atomic APIs in the .NET Framework.
+
+The good news is that both Microsoft .NET and Mono do this.
+
+### Why are some barriers stronger than specified?
+
+Any given operation is guaranteed to use the specified barrier, or a barrier
+that is strictly a superset of the specified barrier. In the latter case, the
+barrier is stronger than strictly necessary, which can cause slight visible
+slowdowns.
+
+Overly strong barriers are a direct consequence of the limited atomics API
+surface of the .NET Framework.
 
 ### Why does Atomique contain unsafe code?
 
