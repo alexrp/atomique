@@ -33,7 +33,7 @@ answer.
 
 That being said, if you're still in doubt after having read that page, you can
 simply use sequential consistency barriers and you should be fine in 99% of
-cases. Your code will end up a bit slower than it could be, but it's not by all
+cases. Your code will end up a bit slower than necessary, but it's not by all
 that much.
 
 ### Why are some barriers stronger than specified?
