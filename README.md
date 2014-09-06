@@ -15,9 +15,9 @@ algorithms without having to resort to the `Thread.VolatileRead` and
 ### Why the C++11 memory model?
 
 In short: Because it's becoming ubiquitous. C++11, C11, D, Rust, and many other
-languages, old and new alike, are picking up the C++11 memory model. This means
-that many programmers will be familiar with it and there is plenty of
-documentation on it.
+languages, old and new alike, are picking up this memory model. This means that
+many programmers will be familiar with it and there is plenty of documentation
+on it.
 
 There is also the empirical evidence that making an atomic operations API not
 based on the C++11 memory model leads to a complexity disaster, as described in
