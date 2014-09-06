@@ -67,6 +67,16 @@ these operations.
 These could be implemented with a CAS loop, at least for 32-bit and 64-bit
 types. This may be done in a future version of Atomique.
 
+### Why are weak CAS operations not supported?
+
+Three reasons:
+
+1. There is no evidence to suggest that weak CAS is particularly useful.
+2. There is no mapping to any .NET Framework method that would have different
+   semantics than a regular CAS.
+3. All known C++11 `compare_and_exchange_weak` implementations at this time
+   just map to the regular `compare_and_exchange_strong`.
+
 ### Why do CAS methods only specify one barrier?
 
 In C++11, two barriers can be given to `compare_and_exchange_strong`. One is
