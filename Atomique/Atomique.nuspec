@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package>
+    <metadata>
+        <id>$id$</id>
+        <version>$version$</version>
+        <authors>Alex Rønne Petersen</authors>
+        <owners>Alex Rønne Petersen</owners>
+        <licenseUrl>https://github.com/alexrp/atomique/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/alexrp/atomique</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>$description$</description>
+        <releaseNotes>Initial release of Atomique.</releaseNotes>
+        <copyright>Copyright © 2014</copyright>
+        <tags>Atomic Atomics Parallel Parallelism Concurrency Thread Threading</tags>
+    </metadata>
+</package>
