@@ -8,7 +8,7 @@ and provides an understandable atomic operations API based on the C++11 memory
 model (with some simplifications for the Common Language Infrastructure). The
 goal is that users should be able to write lock-free data structures and
 algorithms without having to resort to the `Thread.VolatileRead` and
-`Thread.VolatileWrite` methods, nor the `Interlocked` and `Volatile` classes.
+`Thread.VolatileWrite` methods, or the `Interlocked` and `Volatile` classes.
 
 ## FAQ
 
